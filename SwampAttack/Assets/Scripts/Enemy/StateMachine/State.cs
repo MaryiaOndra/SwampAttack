@@ -20,6 +20,17 @@ public abstract class State : MonoBehaviour
         }
     }
 
+    public void Exit()
+    {
+        if (enabled == true)
+        {
+            foreach (var transition in _transitions)
+                transition.enabled = false;
+
+            enabled = false;
+        }
+    }
+
     public State GetNextState() 
     {
         foreach (var transition in _transitions)
