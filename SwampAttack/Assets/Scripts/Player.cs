@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int _health;
+    [SerializeField] private int _maxHealth;
     [SerializeField] private List<Weapon> _weapons;
     [SerializeField] private Transform _shootPoint;
 
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         _currentWeapon = _weapons[0];
-        _currentHealth = _health;
+        _currentHealth = _maxHealth;
         _animator = GetComponent<Animator>();
     }
 
@@ -32,11 +32,10 @@ public class Player : MonoBehaviour
 
     public void ApplyDamage(int damage) 
     {
-        _health -= damage;
+        _currentHealth -= damage;
 
-        if (_health <= 0)
-            Destroy(gameObject);
-    
+        if (_currentHealth <= 0)
+            Destroy(gameObject);    
     }
 
     public void OnEnemyDied(int reward) 
