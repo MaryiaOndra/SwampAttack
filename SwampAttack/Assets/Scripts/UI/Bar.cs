@@ -1,18 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class Bar : MonoBehaviour
+public abstract class Bar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] protected Slider Slider;
 
-    // Update is called once per frame
-    void Update()
+    public void OnValueChanged(int value, int maxValue) 
     {
-        
+        Slider.value = (float)value / maxValue;
     }
 }
