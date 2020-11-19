@@ -18,23 +18,22 @@ public class EnemyStateMachine : MonoBehaviour
 
     private void Update()
     {
-        if (_currentState ==  null)
-                    return;
+        if (_currentState == null)
+            return;
 
         var nextState = _currentState.GetNextState();
 
         if (nextState != null)
-            Transit(nextState);     
+            Transit(nextState);   
     }
 
     private void Reset(State startState)
     {
         _currentState = startState;
 
-        if (CurrentState != null)
-        {
+        if (_currentState != null)
             _currentState.Enter(_target);
-        }
+        
     }
 
     private void Transit(State nextState) 
