@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MoneyBalance : MonoBehaviour
 {
@@ -11,5 +13,16 @@ public class MoneyBalance : MonoBehaviour
     private void OnEnable()
     {
         _money.text = _player.Money.ToString();
+        _player.MoneyChanged += OnMoneyChanged;
+    }
+
+    private void OnDisable()
+    {
+        _player.MoneyChanged -= OnMoneyChanged;
+    }
+
+    private void OnMoneyChanged(int money)
+    {
+        _money.text = money.ToString();
     }
 }
