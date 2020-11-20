@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
@@ -10,5 +8,15 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] bool _isBought = false;
     [SerializeField] protected Bullet Bullet;
 
+    public string Label => _label;
+    public int Price => _price;
+    public Sprite Icon => _icon;
+    public bool IsBought => _isBought;
+
     public abstract void Shoot(Transform shootPoint);
+
+    public void Buy()
+    {
+        _isBought = true;
+    }
 }

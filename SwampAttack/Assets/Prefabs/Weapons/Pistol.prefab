@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _label: Pistol
-  _price: 0
+  _price: 1
   _icon: {fileID: 21300000, guid: d9059a93bbffd8643b62566a9a69e2d8, type: 3}
-  _isBought: 1
+  _isBought: 0
   Bullet: {fileID: 7630700811635090420, guid: d76e3698ee3b6d744a32b3debf683dbc, type: 3}
