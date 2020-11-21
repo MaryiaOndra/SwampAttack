@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Weapon : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private Sprite _icon;
     [SerializeField] bool _isBought = false;
     [SerializeField] protected Bullet Bullet;
+
 
     public string Label => _label;
     public int Price => _price;

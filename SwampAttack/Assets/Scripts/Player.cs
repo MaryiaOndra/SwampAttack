@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _currentWeapon.Shoot(_shootPoint);
+            _animator.Play("Attack");
         }
     }
 
